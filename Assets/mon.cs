@@ -26,6 +26,10 @@ public class mon : MonoBehaviour
             Debug.Log("a");
             animator.SetBool("mon1",true);
         }
+        if (distance > 100)
+        {
+            animator.SetBool("mon3",true);
+        }
             
          
        
