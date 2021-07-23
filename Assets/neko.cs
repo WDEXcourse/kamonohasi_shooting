@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class neko : MonoBehaviour
+public class neko:MonoBehaviour
 {
+    [SerializeField]
+    
+
     public GameObject target;//追跡するターゲット
     NavMeshAgent agent;//Navmeshagentを使うための変数
 
@@ -13,8 +16,8 @@ public class neko : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        InvokeRepeating("enemyAttack", 1, 1);//エネミーアタックを1秒後に1秒毎に実行
+       agent = GetComponent<NavMeshAgent>();
+       // InvokeRepeating("enemyAttack", 1, 1);//エネミーアタックを1秒後に1秒毎に実行
     }
 
     // Update is called once per frame
