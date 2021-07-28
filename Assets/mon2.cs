@@ -21,7 +21,7 @@ public class mon2 : MonoBehaviour
     {
         Transform mytransform = this.transform;
         var distance = Vector3.Distance(transform.position, targetObj.position);
-        print(distance);
+        
         if (distance < 44)
         {
             animator.SetBool("mon2", true);

@@ -20,7 +20,7 @@ public class mon : MonoBehaviour
     {
         Transform mytransform = this.transform;
         var distance = Vector3.Distance(transform.position, targetObj.position) ;
-        print(distance);
+        
         if (distance < 40)
         {
             Debug.Log("a");

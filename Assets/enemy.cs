@@ -20,8 +20,10 @@ public class enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
-        
+
+       
         agent.destination = target.transform.position;//常にターゲットに向かう
     }
     private void OnTriggerEnter(Collider other)//オブジェクトに触れた時の処理
