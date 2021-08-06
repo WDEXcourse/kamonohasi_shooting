@@ -22,7 +22,7 @@ public class enemy : MonoBehaviour
     void Update()
 
     {
-
+        
        
         agent.destination = target.transform.position;//常にターゲットに向かう
     }

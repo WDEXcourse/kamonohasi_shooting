@@ -16,7 +16,8 @@ public class neko:MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       agent = GetComponent<NavMeshAgent>();
+        transform.rotation = Quaternion.Euler(180, 90, 90);
+            agent = GetComponent<NavMeshAgent>();
         
         // InvokeRepeating("enemyAttack", 1, 1);//エネミーアタックを1秒後に1秒毎に実行
     }
