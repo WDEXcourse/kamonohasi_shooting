@@ -5,12 +5,12 @@ using UnityEngine.AI;
 public class enemy : MonoBehaviour
 {
 
-    
+
     public GameObject target;//追跡するターゲット
     NavMeshAgent agent;//Navmeshagentを使うための変数
-    
-   
-   
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +22,20 @@ public class enemy : MonoBehaviour
     void Update()
 
     {
-        
-       
+
+
         agent.destination = target.transform.position;//常にターゲットに向かう
     }
     private void OnTriggerEnter(Collider other)//オブジェクトに触れた時の処理
     {
-        if (other.gameObject.tag == "bullet")
+        if (other.gameObject.tag == "neko")
         {
-            Destroy(this.gameObject);
+            
         }
+
+
+
+
+
     }
-
-        
-    
-   
-
 }

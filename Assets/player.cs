@@ -11,7 +11,7 @@ public class player : MonoBehaviour
     private float movespeed = 10;//移動スピード
     public float sensitivityX = 15f;//マウス横の動きの強さ
     public float sensitivityY = 15f;//マウス縦の動きの強さ
-    public float minimumX=-360f;//横の回転の最低値
+    public float minimumX = -360f;//横の回転の最低値
     public float miximumX = 360f;//横の回転の最大値
     public float minimumY = -60f;//縦の回転の最低値
     public float miximumY = 60f;//縦の回転の最大値
@@ -24,7 +24,7 @@ public class player : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        
+
     }
 
     // Update is called once per frame
@@ -34,31 +34,31 @@ public class player : MonoBehaviour
         rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
         rotationY = Mathf.Clamp(rotationY, minimumY, miximumY);
         verRot.transform.localEulerAngles = new Vector3(-rotationY, -90, 0);
-       horRot.transform.localEulerAngles = new Vector3(0, rotationX, 0);
-        if(Input.GetKey(KeyCode.A))
+        horRot.transform.localEulerAngles = new Vector3(0, rotationX, 0);
+        if (Input.GetKey(KeyCode.A))
         {
             characterController.Move(this.gameObject.transform.forward * -1f * movespeed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            characterController.Move(this.gameObject.transform.forward  * movespeed * Time.deltaTime);
+            characterController.Move(this.gameObject.transform.forward * movespeed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
-            characterController.Move(this.gameObject.transform.right *-1f* movespeed * Time.deltaTime);
+            characterController.Move(this.gameObject.transform.right * -1f * movespeed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             characterController.Move(this.gameObject.transform.right * movespeed * Time.deltaTime);
         }
 
-       
+
 
         characterController.Move(Velocity * Time.deltaTime);
         Velocity.y += Physics.gravity.y * Time.deltaTime;
-        if(characterController.isGrounded)
+        if (characterController.isGrounded)
         {
-            if(Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Velocity.y = jumpPower;
             }
@@ -66,7 +66,14 @@ public class player : MonoBehaviour
 
 
     }
-    
+    private void OnTriggerEnter(Collider other)//オブジェクトに触れた時の処理
+    {
+        //if (other.gameObject.tag == "neko")
+        {
+           // Hp
+        }
+
     }
+}
 
 

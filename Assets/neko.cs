@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class neko:MonoBehaviour
 {
+    private float movespeed;//移動スピード
     [SerializeField]
     private Transform targetObj;
-
+    
     public GameObject target;//追跡するターゲット
     NavMeshAgent agent;//Navmeshagentを使うための変数
 
@@ -16,6 +17,7 @@ public class neko:MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         transform.rotation = Quaternion.Euler(180, 90, 90);
             agent = GetComponent<NavMeshAgent>();
         
@@ -25,6 +27,8 @@ public class neko:MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         Transform mytransform = this.transform;
         var distance = Vector3.Distance(transform.position, targetObj.position);
         print(distance);

@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;//UI操作をする時に追記
-using UnityEngine.SceneManagement;//シーンを変更する時に追記
-public class HP : MonoBehaviour
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+public class nehp : MonoBehaviour
 {
     private Slider setSlider;//スライダーを使用する時の変数
     public GameObject slider;//使用するHPゲージ
-    private float Hpber= 10f;//体力
+    private float neHpber = 10f;//体力
     // Start is called before the first frame update
     void Start()
     {
@@ -17,23 +17,18 @@ public class HP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setSlider.value = Hpber;//slider.valueを体力にする
-        if (setSlider.value<=0)
+        setSlider.value = neHpber;//slider.valueを体力にする
+        if (setSlider.value <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
     }
     private void OnTriggerEnter(Collider other)//何かに触れた時の処理
     {
-        if(other.gameObject.tag == "enemybullet")//もし触れた物のタグがenemyballetだったら
+        if (other.gameObject.tag == "bullet")//もし触れた物のタグがballetだったら
         {
-            Hpber--;//Hpberを１づつへらす
-        }
-        if (other.gameObject.tag == "neko")
-        {
-            Hpber--;
+            neHpber--;//Hpberを１づつへらす
         }
 
     }
-    
 }
