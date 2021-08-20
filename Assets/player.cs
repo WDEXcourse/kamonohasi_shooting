@@ -68,9 +68,12 @@ public class player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)//オブジェクトに触れた時の処理
     {
-        //if (other.gameObject.tag == "neko")
+        
         {
-           // Hp
+            if (other.gameObject.tag == "neko")//もし触れた物のタグnekoがだったら
+            {
+                ; //Hpberを１づつへらす
+            }
         }
 
     }

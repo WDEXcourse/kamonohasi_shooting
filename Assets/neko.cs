@@ -32,11 +32,11 @@ public class neko:MonoBehaviour
         Transform mytransform = this.transform;
         var distance = Vector3.Distance(transform.position, targetObj.position);
         print(distance);
-        if (distance > 30)
+        if (distance > 50)
         {
             GetComponent<NavMeshAgent>().isStopped = true; 
         }
-        if (distance < 30)
+        if (distance < 50)
         {
             GetComponent<NavMeshAgent>().isStopped = false;
 
@@ -46,9 +46,6 @@ public class neko:MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)//オブジェクトに触れた時の処理
     {
-        if (other.gameObject.tag == "bullet")
-        {
-            
-        }
+        
     }
 }
